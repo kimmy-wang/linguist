@@ -33,7 +33,7 @@
 <script type="text/javascript">
       var $list = $("#languages");
 
-      $.get("https://rawgit.com/github/linguist/master/lib/linguist/languages.yml", function(data) {
+      $.get("https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml", function(data) {
         var languages = jsyaml.safeLoad(data);
 
         for(var language in languages) {
