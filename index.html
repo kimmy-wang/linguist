@@ -36,12 +36,15 @@
       $.get("https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml", function(data) {
         var languages = jsyaml.safeLoad(data);
         var languageList = [];
+        var languageList1 = [];
         for(var language in languages) {
           attrs = languages[language];
           $list.append('<li style="border-bottom-color:' + attrs.color + '">' + language + '</li>');
           languageList.push(new Language(language, attrs.color || '#cccccc'))
+          languageList1.push(`Language(text: '${language}', color: '${attrs.color || '#cccccc'}')`)
         }
         console.log(JSON.stringify(languageList));
+        console.log(JSON.stringify(languageList1));
       });
 
       function Language(text, color) {
